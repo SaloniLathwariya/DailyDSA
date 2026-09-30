@@ -65,4 +65,4 @@ public class Searching {
         System.out.println("Binary Search Recursively Result: "+ binarySearchRecursive(nums2, 4, 0, nums2.length-1));
         System.out.println("Binary Search Iteratively Result: "+ binarySearchIterative(nums2, 4));
     }
-} 
+}  

@@ -9,10 +9,10 @@ public class MaxProfit {
         for (int i=0; i<prices.length; i++) {
             // j = day when we sell, after the buy day
             for (int j=i+1; j<prices.length; j++) {
-                int maxDiff = prices[j]-prices[i];
+                int profit = prices[j]-prices[i];
 
                 // Keep the highest profit found so far.
-                maxProfit = Math.max(maxProfit, maxDiff);
+                profit = Math.max(maxProfit, profit);
             }
         }        
         return maxProfit;
@@ -25,14 +25,14 @@ public class MaxProfit {
     public static int maxProfitFromStock(int[] prices) {
         int maxProfit = 0;
         // Assume the first price is the best buy price seen so far.
-        int sellPrice = prices[0];
+        int minPrice = prices[0];
         for (int i=1; i<prices.length; i++) {
             // If today is cheaper than the previous minimum, update the minimum buy price.
-            if (prices[i] < sellPrice) {
-                sellPrice = prices[i];
+            if (prices[i] < minPrice) {
+                minPrice = prices[i];
             }
             // Profit if we buy at the lowest price seen so far and sell today.
-            int profit = prices[i]-sellPrice;
+            int profit = prices[i]-minPrice;
             maxProfit = Math.max(profit, maxProfit);
         }
         return maxProfit;

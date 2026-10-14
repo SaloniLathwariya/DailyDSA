@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class SubarraySum {
 
     // brute force approach - 0(n^3) time complexity
